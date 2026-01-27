@@ -1,4 +1,4 @@
-baseURL = "https://wwenyue932-maker.pages.dev"
+baseURL = 'https://wwenyue932.workers.dev'
 relativeURLs = true
 languageCode = "zh-CN"
 defaultContentLanguage = "zh"
