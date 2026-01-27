@@ -26,7 +26,7 @@ theme = "paper"
   # rss = true                                # show rss icon
 
   # home page profile
-  avatar = '/images/inco.jpg'                 # gravatar email or image url
+  avatar = 'D:\Blog\Blog\static\images\inco.jpg'                 # gravatar email or image url
   name = '乌漆嘛黑'
   bio = '我与我周旋久,宁做我'
 
