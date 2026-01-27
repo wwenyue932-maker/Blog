@@ -1,4 +1,4 @@
-baseURL = 'https://blog-23f.pages.dev'
+baseURL = 'https://blog-23f.pages.dev/'
 languageCode = "zh-CN"
 relativeURLs = false
 canonifyURLs = true
