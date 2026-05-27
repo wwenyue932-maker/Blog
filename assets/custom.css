@@ -12,6 +12,8 @@
   --journal-sticker: #e8fff1;
   --journal-shadow: rgb(17 24 39 / 10%);
   --journal-shadow-soft: rgb(17 24 39 / 6%);
+  --journal-surface: color-mix(in oklab, white 74%, var(--journal-paper));
+  --journal-surface-2: color-mix(in oklab, white 60%, var(--journal-paper-2));
 }
 
 html {
@@ -111,24 +113,28 @@ body > header::before {
 }
 
 main.prose {
+  position: relative;
+  isolation: isolate;
   border-radius: 18px;
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 78%), rgb(255 255 255 / 62%)),
-    linear-gradient(0deg, var(--journal-paper), var(--journal-paper));
-  border: 1px solid rgb(0 0 0 / 10%);
+  background-color: var(--journal-surface);
+  background-image:
+    radial-gradient(900px 240px at 50% 0%, rgb(255 255 255 / 55%), rgb(255 255 255 / 0%)),
+    linear-gradient(180deg, rgb(255 255 255 / 30%), rgb(255 255 255 / 0%));
+  border: 1px solid rgb(17 24 39 / 10%);
   box-shadow:
-    0 18px 46px var(--journal-shadow-soft),
-    0 1px 0 rgb(0 0 0 / 5%) inset;
+    0 22px 54px var(--journal-shadow-soft),
+    0 1px 0 rgb(255 255 255 / 50%) inset;
 }
 
 html.dark main.prose {
-  background:
-    linear-gradient(180deg, rgb(255 255 255 / 6%), rgb(255 255 255 / 4%)),
-    linear-gradient(0deg, rgb(26 26 26), rgb(26 26 26));
+  background-color: rgb(22 22 22);
+  background-image:
+    radial-gradient(900px 240px at 50% 0%, rgb(255 255 255 / 6%), rgb(255 255 255 / 0%)),
+    linear-gradient(180deg, rgb(255 255 255 / 4%), rgb(255 255 255 / 0%));
   border: 1px solid rgb(255 255 255 / 10%);
   box-shadow:
-    0 18px 50px rgb(0 0 0 / 45%),
-    0 1px 0 rgb(255 255 255 / 6%) inset;
+    0 22px 56px rgb(0 0 0 / 48%),
+    0 1px 0 rgb(255 255 255 / 5%) inset;
 }
 
 main.prose::before {
@@ -162,14 +168,35 @@ html.dark main.prose::before {
   mix-blend-mode: normal;
 }
 
+main.prose::after {
+  content: "";
+  position: absolute;
+  inset: -26px;
+  border-radius: 34px;
+  background:
+    radial-gradient(closest-side at 50% 10%, rgb(255 255 255 / 70%), rgb(255 255 255 / 0%) 58%),
+    radial-gradient(closest-side at 50% 60%, color-mix(in oklab, var(--journal-paper) 92%, transparent), rgb(255 255 255 / 0%) 70%);
+  filter: blur(12px);
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+}
+
+html.dark main.prose::after {
+  background:
+    radial-gradient(closest-side at 50% 10%, rgb(255 255 255 / 10%), rgb(255 255 255 / 0%) 58%),
+    radial-gradient(closest-side at 50% 60%, rgb(0 0 0 / 45%), rgb(0 0 0 / 0%) 70%);
+  opacity: 0.6;
+}
+
 main.prose > section.relative {
   position: relative;
   isolation: isolate;
   overflow: visible;
   border-radius: 14px;
   padding: 16px 18px;
-  background: color-mix(in oklab, white 84%, var(--journal-paper-2));
-  border: 1px solid rgb(0 0 0 / 8%);
+  background: var(--journal-surface-2);
+  border: 1px solid rgb(17 24 39 / 8%);
   box-shadow:
     0 14px 24px var(--journal-shadow-soft),
     0 1px 0 rgb(0 0 0 / 4%) inset;
@@ -278,7 +305,7 @@ main.prose > section.relative:nth-of-type(3n)::before {
 main.prose > section.relative:hover,
 main.prose > section.relative:focus-within {
   transform: rotate(0deg) translateY(-2px);
-  border-color: rgb(0 0 0 / 12%);
+  border-color: rgb(17 24 39 / 12%);
   box-shadow:
     0 22px 36px var(--journal-shadow),
     0 1px 0 rgb(0 0 0 / 4%) inset;
