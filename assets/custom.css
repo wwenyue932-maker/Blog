@@ -1,0 +1,209 @@
+@reference './app.css';
+
+:root {
+  --paper-border: rgb(0 0 0 / 12%);
+  --paper-muted: rgb(0 0 0 / 62%);
+  --paper-surface: rgb(255 255 255 / 92%);
+}
+
+html.dark {
+  --paper-border: rgb(255 255 255 / 14%);
+  --paper-muted: rgb(255 255 255 / 70%);
+  --paper-surface: rgb(255 255 255 / 5%);
+}
+
+body {
+  background: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+main.prose {
+  border-radius: 16px;
+  background: var(--paper-surface);
+  border: 1px solid var(--paper-border);
+}
+
+main.prose > section.relative {
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: transparent;
+  border: 1px solid var(--paper-border);
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+main.prose > section.relative:hover,
+main.prose > section.relative:focus-within {
+  background: rgb(0 0 0 / 2%);
+  border-color: rgb(0 0 0 / 22%);
+}
+
+html.dark main.prose > section.relative:hover,
+html.dark main.prose > section.relative:focus-within {
+  background: rgb(255 255 255 / 3%);
+  border-color: rgb(255 255 255 / 22%);
+}
+
+main.prose h1,
+main.prose h2 {
+  position: relative;
+}
+
+main.prose h1::after {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  height: 1px;
+  width: 72px;
+  background: currentcolor;
+  opacity: 0.15;
+}
+
+main.prose time {
+  color: var(--paper-muted);
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.hover\:animate-spin:hover,
+.hover\:animate-spin:focus-visible {
+  animation: none;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: currentcolor;
+  opacity: 0.16;
+  transform: scaleX(var(--scroll, 0));
+  transform-origin: left;
+  pointer-events: none;
+  z-index: 60;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background: radial-gradient(
+    280px 280px at var(--mx, 50%) var(--my, 50%),
+    rgb(0 0 0 / 7%),
+    transparent 60%
+  );
+  transition: opacity 160ms ease;
+}
+
+html.dark body::before {
+  background: radial-gradient(
+    320px 320px at var(--mx, 50%) var(--my, 50%),
+    rgb(255 255 255 / 8%),
+    transparent 60%
+  );
+}
+
+html.pointer-on body::before {
+  opacity: 1;
+}
+
+@keyframes paper-click {
+  0% {
+    opacity: 0;
+    background-size: 0 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-size: 900px 900px;
+  }
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: var(--cx, 50%) var(--cy, 50%);
+  background-image: radial-gradient(circle, rgb(0 0 0 / 9%), transparent 55%);
+}
+
+html.dark body::after {
+  background-image: radial-gradient(circle, rgb(255 255 255 / 10%), transparent 55%);
+}
+
+html.clicking body::after {
+  animation: paper-click 520ms ease-out;
+}
+
+#paper-mascot {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+#paper-mascot .bubble {
+  max-width: 220px;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+  background: var(--paper-surface);
+  border: 1px solid var(--paper-border);
+  color: var(--paper-muted);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+#paper-mascot.show .bubble {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#paper-mascot button {
+  height: 52px;
+  width: 52px;
+  border-radius: 999px;
+  border: 1px solid var(--paper-border);
+  background: var(--paper-surface);
+  overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+}
+
+#paper-mascot img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.95);
+}
