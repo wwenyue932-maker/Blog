@@ -1,17 +1,17 @@
 :root {
   --w: calc(760px + 32px * 2);
-  --journal-paper: #fbf6e9;
-  --journal-paper-2: #f3ead4;
-  --journal-ink: #2a2622;
-  --journal-ink-muted: rgb(42 38 34 / 70%);
-  --journal-line: rgb(54 99 160 / 13%);
-  --journal-margin: rgb(244 98 98 / 16%);
-  --journal-tape-1: #ffe2b6;
-  --journal-tape-2: #d5f2dd;
-  --journal-tape-3: #d7e8ff;
-  --journal-sticker: #fff3c6;
-  --journal-shadow: rgb(0 0 0 / 10%);
-  --journal-shadow-soft: rgb(0 0 0 / 6%);
+  --journal-paper: #fbfcf8;
+  --journal-paper-2: #f1f6f1;
+  --journal-ink: #1f2937;
+  --journal-ink-muted: rgb(31 41 55 / 62%);
+  --journal-line: rgb(64 130 200 / 10%);
+  --journal-margin: rgb(255 128 128 / 10%);
+  --journal-tape-1: #e8fff1;
+  --journal-tape-2: #e7f5ff;
+  --journal-tape-3: #fff2db;
+  --journal-sticker: #e8fff1;
+  --journal-shadow: rgb(17 24 39 / 10%);
+  --journal-shadow-soft: rgb(17 24 39 / 6%);
 }
 
 html {
@@ -26,7 +26,7 @@ body {
   color: var(--journal-ink);
   background-color: var(--journal-paper);
   background-image:
-    radial-gradient(circle at 1px 1px, rgb(0 0 0 / 3%) 1px, transparent 1.5px),
+    radial-gradient(circle at 1px 1px, rgb(0 0 0 / 2%) 1px, transparent 1.5px),
     repeating-linear-gradient(
       to bottom,
       transparent 0,
@@ -55,15 +55,15 @@ html.dark body {
       to bottom,
       transparent 0,
       transparent 25px,
-      rgb(130 170 255 / 12%) 25px,
-      rgb(130 170 255 / 12%) 26px
+      rgb(130 170 255 / 11%) 25px,
+      rgb(130 170 255 / 11%) 26px
     ),
     linear-gradient(
       90deg,
       transparent 0,
       transparent 54px,
-      rgb(255 120 120 / 12%) 54px,
-      rgb(255 120 120 / 12%) 56px,
+      rgb(255 120 120 / 10%) 54px,
+      rgb(255 120 120 / 10%) 56px,
       transparent 56px
     );
   background-size: 12px 12px, 100% 26px, 100% 100%;
@@ -99,7 +99,7 @@ body > header::before {
       transparent 60px
     );
   pointer-events: none;
-  opacity: 0.55;
+  opacity: 0.35;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -113,7 +113,7 @@ body > header::before {
 main.prose {
   border-radius: 18px;
   background:
-    linear-gradient(180deg, rgb(255 255 255 / 74%), rgb(255 255 255 / 62%)),
+    linear-gradient(180deg, rgb(255 255 255 / 78%), rgb(255 255 255 / 62%)),
     linear-gradient(0deg, var(--journal-paper), var(--journal-paper));
   border: 1px solid rgb(0 0 0 / 10%);
   box-shadow:
@@ -153,7 +153,7 @@ main.prose::before {
       var(--journal-line) 29px
     );
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.45;
   mix-blend-mode: multiply;
 }
 
@@ -168,7 +168,7 @@ main.prose > section.relative {
   overflow: visible;
   border-radius: 14px;
   padding: 16px 18px;
-  background: color-mix(in oklab, white 78%, var(--journal-paper-2));
+  background: color-mix(in oklab, white 84%, var(--journal-paper-2));
   border: 1px solid rgb(0 0 0 / 8%);
   box-shadow:
     0 14px 24px var(--journal-shadow-soft),
@@ -213,7 +213,7 @@ main.prose > section.relative::before {
     0 10px 18px var(--journal-shadow-soft),
     0 1px 0 rgb(0 0 0 / 6%) inset;
   transform: rotate(-3deg);
-  opacity: 0.9;
+  opacity: 0.75;
   pointer-events: none;
   z-index: 1;
 }
@@ -223,13 +223,13 @@ main.prose > section.relative::after {
   position: absolute;
   top: 0;
   right: 0;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   border-top-right-radius: 14px;
   background:
     linear-gradient(135deg, rgb(0 0 0 / 0%) 0 55%, rgb(0 0 0 / 10%) 56% 58%, rgb(255 255 255 / 65%) 59% 100%);
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.35;
   z-index: 0;
 }
 
@@ -249,7 +249,7 @@ main.prose > section.relative > a {
 }
 
 main.prose > section.relative h2 {
-  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 main.prose > section.relative time {
@@ -302,9 +302,9 @@ main.prose h1 {
   display: inline-block;
   padding: 6px 14px;
   border-radius: 999px;
-  background: color-mix(in oklab, var(--journal-sticker) 72%, transparent);
+  background: color-mix(in oklab, var(--journal-sticker) 58%, transparent);
   box-shadow: 0 12px 24px var(--journal-shadow-soft);
-  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 html.dark main.prose h1 {
@@ -338,7 +338,7 @@ header nav a::after {
   bottom: -0.35rem;
   height: 6px;
   border-radius: 999px;
-  background: color-mix(in oklab, var(--journal-sticker) 72%, transparent);
+  background: color-mix(in oklab, var(--journal-sticker) 62%, transparent);
   box-shadow: 0 10px 18px var(--journal-shadow-soft);
   transform: rotate(-1deg) scaleX(0);
   transform-origin: left;
@@ -351,7 +351,7 @@ header nav a:focus-visible::after {
 }
 
 .btn {
-  background: color-mix(in oklab, var(--journal-sticker) 75%, white);
+  background: color-mix(in oklab, var(--journal-sticker) 62%, white);
   border: 1px solid rgb(0 0 0 / 10%);
   box-shadow:
     0 14px 24px var(--journal-shadow-soft),
@@ -395,7 +395,7 @@ main.prose > .-mt-2.mb-12.flex.items-center::before {
     0 12px 20px var(--journal-shadow-soft),
     0 1px 0 rgb(0 0 0 / 6%) inset;
   transform: rotate(-2.5deg);
-  opacity: 0.9;
+  opacity: 0.75;
   pointer-events: none;
 }
 
