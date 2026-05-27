@@ -1,4 +1,5 @@
 baseURL = 'https://blog-23f.pages.dev/'
+title = '乌漆嘛黑'
 languageCode = "zh-CN"
 relativeURLs = false
 canonifyURLs = true
@@ -15,6 +16,8 @@ theme = "paper"
 [params]
   # color style
   color = 'linen'                           # linen, wheat, gray, light
+
+  description = '我与我周旋久，宁做我。'
 
   # header social icons
   # twitter = 'YOUR_TWITTER_ID'               # twitter.com/YOUR_TWITTER_ID
