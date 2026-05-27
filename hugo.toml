@@ -1,5 +1,5 @@
 baseURL = 'https://blog-23f.pages.dev/'
-title = '乌漆嘛黑'
+title = '乌漆嘛黑的学习笔记'
 languageCode = "zh-CN"
 relativeURLs = true
 canonifyURLs = false
