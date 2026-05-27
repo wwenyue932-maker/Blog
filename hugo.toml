@@ -1,8 +1,8 @@
 baseURL = 'https://blog-23f.pages.dev/'
 title = '乌漆嘛黑'
 languageCode = "zh-CN"
-relativeURLs = false
-canonifyURLs = true
+relativeURLs = true
+canonifyURLs = false
 defaultContentLanguage = "zh"
 theme = "paper"
 
@@ -31,7 +31,7 @@ theme = "paper"
 
   # home page profile
 
-  avatar = 'https://blog-23f.pages.dev/images/inco.jpg'                 # gravatar email or image url
+  avatar = '/images/inco.jpg'                 # gravatar email or image url
   name = '乌漆嘛黑'
   bio = '我与我周旋久,宁做我'
 
