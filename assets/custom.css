@@ -146,10 +146,15 @@ html.dark .paper-hero {
   box-shadow: 0 20px 60px rgb(0 0 0 / 35%);
 }
 
+.paper-hero {
+  padding: 0 16px;
+}
+
 .paper-hero-inner {
   display: flex;
-  gap: 18px;
-  align-items: flex-start;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 28px;
 }
 
 .paper-hero-avatar {
@@ -299,6 +304,7 @@ html.dark .paper-hero-stats span {
 
 .paper-section {
   margin: 34px 0;
+  padding: 0 16px;
 }
 
 .paper-section-head {
