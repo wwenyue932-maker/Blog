@@ -1,0 +1,276 @@
+@reference './app.css';
+
+:root {
+  --accent-1: #fdf8eb; /* creamy bg */
+  --accent-2: #cce3f0; /* header blue */
+  --accent-3: #ffecd2; /* card hover */
+  --text-main: #3d3b38; /* dark gray text */
+  --card-bg: #fffbf5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+/* Basic setup and font */
+body {
+  background-color: var(--accent-1);
+  background-image: radial-gradient(#ebd9c0 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-main);
+  font-family: 'ZCOOL KuaiLe', 'Comic Sans MS', cursive, sans-serif;
+  overflow-x: hidden;
+}
+
+html.dark body {
+  background-color: #2c2a27;
+  background-image: radial-gradient(#4a4640 1px, transparent 1px);
+  color: #fdf8eb;
+  --text-main: #fdf8eb;
+  --card-bg: #3d3b38;
+}
+
+/* Custom Scrollbar (Cat face thumb) */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d1bfae;
+  border-radius: 10px;
+  border: 3px solid var(--accent-1);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b5a08b;
+}
+
+/* Header & Nav */
+header {
+  background-color: var(--accent-2);
+  border-bottom: 3px solid #2c2c2c;
+  border-radius: 0 0 15px 15px / 0 0 3px 15px;
+  padding: 10px 20px;
+  margin-bottom: 2rem;
+  box-shadow: 2px 4px 0 rgba(0,0,0,0.1);
+}
+html.dark header {
+  background-color: #3b505c;
+  border-bottom-color: #1a1a1a;
+}
+
+/* Main Container */
+main.prose {
+  max-width: 1000px !important; /* Make it wider for the grid */
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+html.dark main.prose {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Avatar Section */
+.avatar-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: 2px dashed rgba(0,0,0,0.15);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+}
+html.dark .avatar-profile {
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.2);
+}
+
+.avatar-img-wrapper {
+  position: relative;
+  border: 3px solid #2c2c2c;
+  border-radius: 50%;
+  padding: 4px;
+  background: #fff;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+}
+.avatar-img-wrapper img {
+  border-radius: 50%;
+}
+/* Little sparkles around avatar */
+.avatar-img-wrapper::before,
+.avatar-img-wrapper::after {
+  content: '✨';
+  position: absolute;
+  font-size: 1.2rem;
+  animation: paper-float 3s ease-in-out infinite;
+}
+.avatar-img-wrapper::before { top: -10px; left: -10px; }
+.avatar-img-wrapper::after { bottom: -5px; right: -15px; animation-delay: 1.5s; }
+
+/* Grid Layout for Posts */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hand-drawn Cards */
+.paper-card {
+  background: var(--card-bg);
+  border: 2px solid #2c2c2c;
+  /* Hand-drawn sketchy border radius */
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  padding: 20px 24px;
+  box-shadow: 4px 5px 0px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible;
+  margin: 0 !important; /* reset Hugo margin */
+}
+
+html.dark .paper-card {
+  border-color: #1a1a1a;
+  box-shadow: 4px 5px 0px rgba(0,0,0,0.4);
+}
+
+.paper-card:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 6px 8px 0px rgba(0,0,0,0.15);
+  background: var(--accent-3);
+}
+
+html.dark .paper-card:hover {
+  background: #4f4b45;
+  box-shadow: 6px 8px 0px rgba(0,0,0,0.5);
+}
+
+/* Featured Badge */
+.paper-featured span {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: #ffb4a2;
+  border: 2px solid #2c2c2c;
+  border-radius: 3px 15px 5px 15px / 15px 5px 15px 3px;
+  padding: 4px 12px;
+  font-weight: bold;
+  color: #2c2c2c;
+  transform: rotate(-3deg);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+html.dark .paper-featured span {
+  background: #cc6c5c;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+/* Random Icons on Cards (CSS nth-child trick) */
+.paper-card::after {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  opacity: 0.8;
+  pointer-events: none;
+}
+.paper-card:nth-child(4n+1)::after { content: '🌸'; }
+.paper-card:nth-child(4n+2)::after { content: '🖋️'; }
+.paper-card:nth-child(4n+3)::after { content: '🗝️'; }
+.paper-card:nth-child(4n+4)::after { content: '🪶'; }
+
+/* Typography inside cards */
+.paper-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem !important;
+  color: var(--text-main);
+  border-bottom: 2px solid transparent;
+  display: inline-block;
+  transition: border-color 0.2s;
+}
+.paper-card:hover h2 {
+  border-bottom: 2px dashed #2c2c2c;
+}
+html.dark .paper-card:hover h2 {
+  border-bottom-color: #fdf8eb;
+}
+
+/* Pager / Button */
+.paper-pager {
+  background: var(--card-bg);
+  border: 2px solid #2c2c2c;
+  border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+  padding: 8px 20px;
+  color: var(--text-main);
+  font-weight: bold;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  position: relative;
+}
+.paper-pager::after {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.paper-pager:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 5px 0 rgba(0,0,0,0.15);
+  background: var(--accent-3);
+}
+.paper-pager:hover::after {
+  opacity: 1;
+}
+
+html.dark .paper-pager {
+  border-color: #1a1a1a;
+}
+html.dark .paper-pager:hover {
+  background: #4f4b45;
+}
+
+/* Floating Character Illustration (CSS Placeholder) */
+body::after {
+  content: '';
+  position: fixed;
+  right: 2%;
+  bottom: 10%;
+  width: 150px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" x="50" font-size="40" text-anchor="middle" dominant-baseline="middle">🏃‍♂️</text><text y="20" x="80" font-size="20">✨</text><text y="80" x="20" font-size="20">✨</text></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: paper-float 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  body::after {
+    display: none; /* Hide character on smaller screens */
+  }
+}
+
+@keyframes paper-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
