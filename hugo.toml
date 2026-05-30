@@ -43,9 +43,6 @@ ignoreErrors = ["error-remote-getjson"]
     # shortname = 'YOUR_DISQUS_SHORTNAME'     # use disqus comments
 
 [params]
-  # custom css
-  customCSS = ["css/custom.css"]
-
   # color style
   color = 'linen'                           # linen, wheat, gray, light
 
