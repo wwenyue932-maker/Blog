@@ -9,7 +9,7 @@ enableInlineShortcodes = true
 ignoreErrors = ["error-remote-getjson"]
 
 [pagination]
-  pagerSize = 5
+  pagerSize = 6
 
 [markup]
   [markup.goldmark]
