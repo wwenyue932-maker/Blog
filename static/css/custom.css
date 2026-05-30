@@ -25,6 +25,16 @@ main.prose > section.paper-card, main.prose > section.relative {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* 极其平滑的贝塞尔曲线动画 */ 
 } 
 
+/* 强制显示摘要内容并重置它的 display 属性，防止被主题隐藏 */
+.paper-excerpt {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    margin-top: 0.8rem !important;
+    color: #4a5568 !important;
+}
+
 /* 鼠标悬停动效：卡片微微浮起，边框变蓝，透出科技感阴影 */ 
 main.prose > section.paper-card:hover, main.prose > section.relative:hover { 
     transform: translateY(-4px) !important; 
