@@ -248,31 +248,37 @@ html.dark .paper-featured span {
   border-color: #1a1a1a;
 }
 
-/* Random Icons on Cards (CSS nth-child trick) */
+/* Pingu Images on Cards */
 .paper-card::after {
   content: '';
   position: absolute;
   right: 20px;
-  bottom: 20px;
-  width: 60px; /* Size for Pingu images */
-  height: 60px;
+  bottom: 15px;
+  width: 48px; /* Size of the Pingu icon */
+  height: 48px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom right;
-  opacity: 0.95; 
+  background-position: right bottom;
+  opacity: 0.95;
   pointer-events: none;
-  transition: all 0.3s ease;
-  mix-blend-mode: multiply; /* Helps blend white backgrounds into the card */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.paper-card:hover::after {
+  transform: scale(1.15) translateY(-5px) rotate(-5deg); /* Playful jump on hover */
+}
+
 html.dark .paper-card::after {
-  opacity: 0.85; 
-  mix-blend-mode: normal; /* Disable multiply in dark mode so they don't disappear */
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); /* Subtle neon glow */
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
 }
+
 html.dark .paper-card:hover::after {
   opacity: 1;
-  filter: drop-shadow(0 0 12px rgba(255, 184, 108, 0.6)); /* Warmer glow on hover */
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
 }
+
+/* Mapping to local transparent PNGs */
 .paper-card:nth-child(4n+1)::after { background-image: url('/images/pingu1.png'); }
 .paper-card:nth-child(4n+2)::after { background-image: url('/images/pingu2.png'); }
 .paper-card:nth-child(4n+3)::after { background-image: url('/images/pingu3.png'); }
