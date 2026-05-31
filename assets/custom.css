@@ -267,10 +267,10 @@ html.dark .paper-card:hover::after {
   opacity: 1;
   filter: drop-shadow(0 0 12px rgba(255, 184, 108, 0.6)); /* Warmer glow on hover */
 }
-.paper-card:nth-child(4n+1)::after { content: '🌸'; }
-.paper-card:nth-child(4n+2)::after { content: '🖋️'; }
-.paper-card:nth-child(4n+3)::after { content: '🗝️'; }
-.paper-card:nth-child(4n+4)::after { content: '🪶'; }
+.paper-card:nth-child(4n+1)::after { content: '🐧'; }
+.paper-card:nth-child(4n+2)::after { content: '🦭'; }
+.paper-card:nth-child(4n+3)::after { content: '�'; }
+.paper-card:nth-child(4n+4)::after { content: '⛄'; }
 
 /* Typography inside cards */
 .paper-card {
