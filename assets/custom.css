@@ -289,7 +289,7 @@ html.dark .paper-card:hover::after {
 .paper-card {
   display: flex;
   flex-direction: column;
-  padding: 24px; /* More generous padding for breathing room */
+  padding: 24px 80px 24px 32px; /* Increased left padding (32px) and right padding (80px) for Pingu */
   gap: 12px; /* Uniform vertical spacing between elements */
   text-decoration: none;
 }
