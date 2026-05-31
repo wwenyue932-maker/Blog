@@ -254,10 +254,10 @@ html.dark .paper-featured span {
   right: 20px;
   bottom: 20px;
   font-size: 2rem;
-  opacity: 0.8;
+  opacity: 0.9; /* Slightly brighter opacity */
   pointer-events: none;
   transition: all 0.3s ease;
-  filter: sepia(0.4) saturate(0.6) hue-rotate(-10deg) opacity(0.85); /* Hand-drawn, desaturated look */
+  /* Removed the desaturation filter to keep original vibrant colors */
 }
 html.dark .paper-card::after {
   opacity: 0.6; /* Softer in dark mode */
