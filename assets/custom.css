@@ -199,8 +199,8 @@ html.dark .avatar-profile {
   /* Hand-drawn sketchy border radius */
   border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   padding: 20px 24px;
-  box-shadow: 4px 5px 0px rgba(0,0,0,0.15);
-  transition: all 0.2s ease;
+  box-shadow: 0 8px 24px rgba(180, 160, 140, 0.08); /* Diffused warm shadow instead of hard shadow */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: visible;
   margin: 0 !important; /* reset Hugo margin */
@@ -216,8 +216,8 @@ html.dark .paper-card {
 .paper-card:hover {
   background-color: #fff5eb !important;
   border-color: #ffb86c;
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 15px rgba(255, 184, 108, 0.15);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(180, 160, 140, 0.15);
 }
 
 html.dark .paper-card:hover {
@@ -258,6 +258,7 @@ html.dark .paper-featured span {
   opacity: 0.8;
   pointer-events: none;
   transition: all 0.3s ease;
+  filter: sepia(0.4) saturate(0.6) hue-rotate(-10deg) opacity(0.85); /* Hand-drawn, desaturated look */
 }
 html.dark .paper-card::after {
   opacity: 0.6; /* Softer in dark mode */
@@ -284,7 +285,7 @@ html.dark .paper-card:hover::after {
   margin-bottom: 12px;
   font-size: 0.85rem;
   order: -1; /* Ensure date is on top */
-  color: #888;
+  color: #9c8e81; /* Neutral taupe / grey-brown */
 }
 
 html.dark .paper-card .paper-meta {
@@ -305,7 +306,7 @@ html.dark .paper-card .paper-meta {
 }
 
 .paper-card .paper-excerpt {
-  color: #7a7a7a;
+  color: #9c8e81; /* Neutral taupe / grey-brown */
   font-size: 0.95rem;
   line-height: 1.6;
   margin-top: auto;
