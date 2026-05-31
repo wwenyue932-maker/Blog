@@ -198,7 +198,7 @@ html.dark .avatar-profile {
   border: 1px solid #f0e6df; /* Ultra-thin light beige border */
   border-radius: 16px; /* Clean, soft rounded corners */
   padding: 20px 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Light floating shadow */
+  box-shadow: 0 8px 20px rgba(160, 140, 120, 0.05); /* Warm diffused shadow */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: visible;
@@ -214,9 +214,9 @@ html.dark .paper-card {
 
 .paper-card:hover {
   background-color: #ffffff !important;
-  border-color: #e5d5c5;
-  transform: translateY(-2px); /* Micro-float */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06); /* Expanded soft shadow */
+  border-color: rgba(255, 184, 108, 0.4); /* Subtle warm glow on border */
+  transform: translateY(-4px); /* Smooth float */
+  box-shadow: 0 15px 35px rgba(160, 140, 120, 0.08), 0 0 15px rgba(255, 184, 108, 0.1); /* Expanded soft shadow with slight glow */
 }
 
 html.dark .paper-card:hover {
@@ -254,8 +254,8 @@ html.dark .paper-featured span {
   position: absolute;
   right: 20px;
   bottom: 15px;
-  width: 48px; /* Size of the Pingu icon */
-  height: 48px;
+  width: 58px; /* 1.2x Size of the Pingu icon */
+  height: 58px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -296,7 +296,7 @@ html.dark .paper-card:hover::after {
   margin-bottom: 12px;
   font-size: 0.85rem;
   order: -1; /* Ensure date is on top */
-  color: #999999; /* Light grey */
+  color: #a39b93; /* Soft taupe/grey-brown */
 }
 
 html.dark .paper-card .paper-meta {
@@ -321,7 +321,7 @@ html.dark .paper-card h2 {
 }
 
 .paper-card .paper-excerpt {
-  color: #999999; /* Light grey */
+  color: #a39b93; /* Soft taupe/grey-brown */
   font-size: 0.95rem;
   line-height: 1.6;
   margin-top: auto;
