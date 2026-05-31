@@ -207,9 +207,10 @@ html.dark .avatar-profile {
 }
 
 html.dark .paper-card {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Extremely fine semi-transparent border */
+  background: rgba(255, 255, 255, 0.03); /* Faint glassmorphism background */
+  backdrop-filter: blur(8px); /* Blur effect */
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3); /* Softer dark shadow */
 }
 
 .paper-card:hover {
@@ -220,9 +221,10 @@ html.dark .paper-card {
 }
 
 html.dark .paper-card:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05) !important; /* Slightly brighter on hover */
+  border-color: rgba(255, 255, 255, 0.2); /* Brighter border */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 184, 108, 0.15); /* Warm glow effect */
+  transform: translateY(-4px) scale(1.02); /* Ensure smooth float */
 }
 
 /* Featured Badge */
@@ -255,6 +257,15 @@ html.dark .paper-featured span {
   font-size: 2rem;
   opacity: 0.8;
   pointer-events: none;
+  transition: all 0.3s ease;
+}
+html.dark .paper-card::after {
+  opacity: 0.6; /* Softer in dark mode */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); /* Subtle neon glow */
+}
+html.dark .paper-card:hover::after {
+  opacity: 1;
+  filter: drop-shadow(0 0 12px rgba(255, 184, 108, 0.6)); /* Warmer glow on hover */
 }
 .paper-card:nth-child(4n+1)::after { content: '🌸'; }
 .paper-card:nth-child(4n+2)::after { content: '🖋️'; }
@@ -274,6 +285,10 @@ html.dark .paper-featured span {
   font-size: 0.85rem;
   order: -1; /* Ensure date is on top */
   color: #888;
+}
+
+html.dark .paper-card .paper-meta {
+  color: #888888; /* Softer mid-grey for dark mode meta */
 }
 
 .paper-card h2 {
@@ -296,7 +311,7 @@ html.dark .paper-featured span {
   margin-top: auto;
 }
 html.dark .paper-card .paper-excerpt {
-  color: rgba(255, 255, 255, 0.5); /* Lighter grey for dark mode excerpt */
+  color: #888888; /* Softer mid-grey for dark mode excerpt */
 }
 
 .paper-card:hover h2 {
