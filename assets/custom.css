@@ -254,25 +254,29 @@ html.dark .paper-featured span {
   position: absolute;
   right: 20px;
   bottom: 20px;
-  width: 50px;
-  height: 50px;
-  background-image: url('https://sfile.chatfiles-msg.com/chat/2/2025/02/25/c96d321d-91b3-46de-9e2e-131804f3dbec.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA3B45U62YNDF5Z33F%2F20250225%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250225T110419Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c5cc995bb667104b2c151121d5c58a6f376f9265fdb21d8b6da93c666df75727');
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%; /* Make it circular */
-  opacity: 0.9;
+  width: 60px; /* Size for Pingu images */
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  opacity: 0.95; 
   pointer-events: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Give the image a slight lift */
+  mix-blend-mode: multiply; /* Helps blend white backgrounds into the card */
 }
 html.dark .paper-card::after {
-  opacity: 0.8; /* Softer in dark mode */
+  opacity: 0.85; 
+  mix-blend-mode: normal; /* Disable multiply in dark mode so they don't disappear */
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); /* Subtle neon glow */
 }
 html.dark .paper-card:hover::after {
   opacity: 1;
   filter: drop-shadow(0 0 12px rgba(255, 184, 108, 0.6)); /* Warmer glow on hover */
 }
+.paper-card:nth-child(4n+1)::after { background-image: url('/images/pingu1.png'); }
+.paper-card:nth-child(4n+2)::after { background-image: url('/images/pingu2.png'); }
+.paper-card:nth-child(4n+3)::after { background-image: url('/images/pingu3.png'); }
+.paper-card:nth-child(4n+4)::after { background-image: url('/images/pingu4.png'); }
 
 /* Typography inside cards */
 .paper-card {
