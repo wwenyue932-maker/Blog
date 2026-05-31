@@ -73,26 +73,43 @@ main.prose {
 /* Single Post Card */
 .single-post-card {
   max-width: 800px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
-  border: 2px solid rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  padding: 40px 50px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 2px solid #e6b9a6; /* Warm pinkish-orange border */
+  border-radius: 12px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
   margin-top: 1rem;
+  text-align: center; /* Center align everything */
 }
 html.dark .single-post-card {
-  background: rgba(44, 42, 39, 0.6);
-  border-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(44, 42, 39, 0.4);
+  border-color: #8c6a5e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Single Post Meta */
+.single-post-card .post-meta {
+  justify-content: center; /* Center align meta */
+  color: #888;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2rem;
+}
+.single-post-card .post-meta svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  opacity: 0.8;
 }
 
 /* Single Post Content Typography */
 .single-post-card .post-content {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color: #2d3748;
+  color: #4a4a4a;
   line-height: 1.8;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  text-align: center; /* Center align content */
+  margin-top: 2rem;
 }
 html.dark .single-post-card .post-content {
   color: #e2e8f0;
