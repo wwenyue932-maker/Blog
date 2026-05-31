@@ -73,27 +73,29 @@ main.prose {
 /* Single Post Card */
 .single-post-card {
   max-width: 800px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(12px);
-  border: 2px solid #e6b9a6; /* Warm pinkish-orange border */
+  background: #ffffff; /* Solid white background */
   border-radius: 12px;
-  padding: 50px 60px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  padding: 40px 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Softer, flatter shadow */
   margin-top: 1rem;
-  text-align: center; /* Center align everything */
+  text-align: center;
 }
 html.dark .single-post-card {
-  background: rgba(44, 42, 39, 0.4);
-  border-color: #8c6a5e;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: #3d3b38; /* Solid dark background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Single Post Meta */
 .single-post-card .post-meta {
-  justify-content: center; /* Center align meta */
+  justify-content: center;
   color: #888;
   font-family: 'Inter', sans-serif;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Reduced margin */
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05); /* Subtle divider */
+}
+html.dark .single-post-card .post-meta {
+  border-bottom-color: rgba(255,255,255,0.05);
 }
 .single-post-card .post-meta svg {
   width: 14px;
@@ -108,8 +110,8 @@ html.dark .single-post-card {
   color: #4a4a4a;
   line-height: 1.8;
   font-size: 1.1rem;
-  text-align: center; /* Center align content */
-  margin-top: 2rem;
+  text-align: center;
+  margin-top: 0; /* Removed top margin to pull it closer to the divider */
 }
 html.dark .single-post-card .post-content {
   color: #e2e8f0;
