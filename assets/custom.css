@@ -252,20 +252,21 @@ html.dark .paper-featured span {
 .paper-card::after {
   content: '';
   position: absolute;
-  right: 20px;
-  bottom: 15px;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%); /* Perfect vertical centering */
   width: 58px; /* 1.2x Size of the Pingu icon */
   height: 58px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: center; /* Center within its box */
   opacity: 0.95;
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .paper-card:hover::after {
-  transform: scale(1.15) translateY(-5px) rotate(-5deg); /* Playful jump on hover */
+  transform: translateY(-50%) scale(1.15) translateY(-5px) rotate(-5deg); /* Playful jump on hover while maintaining center offset */
 }
 
 html.dark .paper-card::after {
@@ -288,26 +289,26 @@ html.dark .paper-card:hover::after {
 .paper-card {
   display: flex;
   flex-direction: column;
-  padding: 24px 28px; /* Slightly larger padding */
+  padding: 24px; /* More generous padding for breathing room */
+  gap: 12px; /* Uniform vertical spacing between elements */
   text-decoration: none;
 }
 
 .paper-card .paper-meta {
-  margin-bottom: 12px;
-  font-size: 0.85rem;
+  margin-bottom: 0; /* Margin replaced by flex gap */
+  font-size: 0.8rem; /* Slightly smaller */
   order: -1; /* Ensure date is on top */
-  color: #a39b93; /* Soft taupe/grey-brown */
+  color: rgba(0, 0, 0, 0.35); /* Soft semi-transparent taupe */
 }
 
 html.dark .paper-card .paper-meta {
-  color: #888888; /* Softer mid-grey for dark mode meta */
+  color: rgba(255, 255, 255, 0.4); /* Equivalent soft opacity for dark mode */
 }
 
 .paper-card h2 {
   font-size: 1.7rem; /* Larger bold title */
   font-weight: bold;
-  margin-top: 0 !important;
-  margin-bottom: 16px !important;
+  margin: 0 !important; /* Margins handled by flex gap */
   color: #3e2723; /* Deep chocolate black */
   border-bottom: 2px solid transparent;
   display: inline-block;
@@ -324,7 +325,7 @@ html.dark .paper-card h2 {
   color: #a39b93; /* Soft taupe/grey-brown */
   font-size: 0.95rem;
   line-height: 1.6;
-  margin-top: auto;
+  margin-top: 4px; /* Slight push down from title */
 }
 html.dark .paper-card .paper-excerpt {
   color: #888888; /* Softer mid-grey for dark mode excerpt */
