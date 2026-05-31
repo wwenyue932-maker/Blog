@@ -9,6 +9,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); /* For better readability */
 
 /* Basic setup and font */
 body {
@@ -68,6 +69,40 @@ main.prose {
   box-shadow: none;
   backdrop-filter: none;
 }
+
+/* Single Post Card */
+.single-post-card {
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  margin-top: 1rem;
+}
+html.dark .single-post-card {
+  background: rgba(44, 42, 39, 0.6);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Single Post Content Typography */
+.single-post-card .post-content {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #2d3748;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+html.dark .single-post-card .post-content {
+  color: #e2e8f0;
+}
+.single-post-card h1, 
+.single-post-card h2, 
+.single-post-card h3 {
+  font-family: 'ZCOOL KuaiLe', 'Comic Sans MS', cursive, sans-serif; /* Keep headers handwritten */
+}
+
 
 html.dark main.prose {
   background: transparent;
@@ -201,6 +236,7 @@ html.dark .paper-featured span {
   display: flex;
   flex-direction: column;
   padding: 24px 28px; /* Slightly larger padding */
+  text-decoration: none;
 }
 
 .paper-card .paper-meta {
@@ -290,9 +326,8 @@ html.dark .paper-pager:hover {
   transform: scale(1) rotate(15deg);
 }
 
-/* Floating Character Illustration (CSS Placeholder) */
-body::after {
-  content: '';
+/* We will remove body::after and use a real element for the floating character */
+.floating-mascot {
   position: fixed;
   right: 40px;
   bottom: 60px;
@@ -303,13 +338,20 @@ body::after {
   background-position: center;
   background-size: contain;
   animation: paper-float 4s ease-in-out infinite;
-  pointer-events: none;
   z-index: 100;
   opacity: 0.9;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s;
+}
+
+.floating-mascot:hover {
+  transform: scale(1.15) translateY(-15px) rotate(-5deg);
+  filter: drop-shadow(0 10px 15px rgba(255, 184, 108, 0.4));
+  animation-play-state: paused;
 }
 
 @media (max-width: 1200px) {
-  body::after {
+  .floating-mascot {
     display: none; /* Hide character on smaller screens */
   }
 }
