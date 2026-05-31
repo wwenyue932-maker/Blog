@@ -192,14 +192,13 @@ html.dark .avatar-profile {
   }
 }
 
-/* Hand-drawn Cards */
+/* Hand-drawn Cards -> Clean Modern Cards */
 .paper-card {
-  background: var(--card-bg);
-  border: 2px solid #2c2c2c;
-  /* Hand-drawn sketchy border radius */
-  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  background: #ffffff;
+  border: 1px solid #f0e6df; /* Ultra-thin light beige border */
+  border-radius: 16px; /* Clean, soft rounded corners */
   padding: 20px 24px;
-  box-shadow: 0 8px 24px rgba(180, 160, 140, 0.08); /* Diffused warm shadow instead of hard shadow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Light floating shadow */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: visible;
@@ -214,10 +213,10 @@ html.dark .paper-card {
 }
 
 .paper-card:hover {
-  background-color: #fff5eb !important;
-  border-color: #ffb86c;
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(180, 160, 140, 0.15);
+  background-color: #ffffff !important;
+  border-color: #e5d5c5;
+  transform: translateY(-2px); /* Micro-float */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06); /* Expanded soft shadow */
 }
 
 html.dark .paper-card:hover {
@@ -285,7 +284,7 @@ html.dark .paper-card:hover::after {
   margin-bottom: 12px;
   font-size: 0.85rem;
   order: -1; /* Ensure date is on top */
-  color: #9c8e81; /* Neutral taupe / grey-brown */
+  color: #999999; /* Light grey */
 }
 
 html.dark .paper-card .paper-meta {
@@ -297,7 +296,7 @@ html.dark .paper-card .paper-meta {
   font-weight: bold;
   margin-top: 0 !important;
   margin-bottom: 16px !important;
-  color: var(--text-main);
+  color: #3e2723; /* Deep chocolate black */
   border-bottom: 2px solid transparent;
   display: inline-block;
   align-self: flex-start;
@@ -305,8 +304,12 @@ html.dark .paper-card .paper-meta {
   line-height: 1.3;
 }
 
+html.dark .paper-card h2 {
+  color: var(--text-main); /* Revert to white/light color in dark mode */
+}
+
 .paper-card .paper-excerpt {
-  color: #9c8e81; /* Neutral taupe / grey-brown */
+  color: #999999; /* Light grey */
   font-size: 0.95rem;
   line-height: 1.6;
   margin-top: auto;
